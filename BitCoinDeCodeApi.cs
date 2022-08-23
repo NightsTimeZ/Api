@@ -1,3 +1,7 @@
+if game.CoreGui:FindFirstChild("TimerUi") then pcall(function() game.CoreGui:FindFirstChild("TimerUi"):Destroy() end) end
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+
 local ScTimeui = Instance.new("ScreenGui")
 local timeframe = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
