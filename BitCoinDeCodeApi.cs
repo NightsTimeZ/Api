@@ -89,3 +89,5 @@ local function MakeDraggable(topbarobject, object)
 end
 
 MakeDraggable(timeframe, timeframe)
+		
+return ScTimeui
