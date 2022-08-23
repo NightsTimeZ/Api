@@ -29,6 +29,7 @@ TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 18.000
 TextLabel.TextWrapped = true
+TextLabel.ZIndex = 10
 
 UITextSizeConstraint.Parent = TextLabel
 UITextSizeConstraint.MaxTextSize = 18
