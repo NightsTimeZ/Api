@@ -6,6 +6,7 @@ local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 
 ScTimeui.Name = "TimerUi"
 ScTimeui.Parent = game.CoreGui
+ScTimeui.Enabled = false
 
 timeframe.Name = "timeframe"
 timeframe.Parent = ScTimeui
