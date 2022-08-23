@@ -1,4 +1,4 @@
-if game.CoreGui:FindFirstChild("TimerUi") then pcall(function() game.CoreGui:FindFirstChild("TimerUi"):Destroy() end) end
+do if game.CoreGui:FindFirstChild("TimerUi") then pcall(function() game.CoreGui:FindFirstChild("TimerUi"):Destroy() end) end end
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 
