@@ -1,11 +1,12 @@
 local Priority = {Recently = nil}
 local DataPriority = {}
 local Priority_Count = 1
-Priority.new = function(name)
+Priority.new = function(name,clip)
     local IDPri = {
         Name = name,
         PriorityId = Priority_Count,
         IsActive = false,
+        RequireClip = clip
     }
     table.insert(DataPriority,IDPri)
     Priority_Count = Priority_Count + 1
@@ -15,6 +16,13 @@ Priority.get = function(name)
     for i,v in ipairs(DataPriority) do 
         if v.Name == name then 
             return v
+        end
+    end
+end
+Priority.GetClip = function()
+    for i,v in ipairs(DataPriority) do 
+        if v.RequireClip == true then 
+            return v.IsActive
         end
     end
 end
