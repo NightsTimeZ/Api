@@ -1,4 +1,4 @@
-local Priority = {}
+local Priority = {Recently = nil}
 local DataPriority = {}
 local Priority_Count = 1
 Priority.new = function(name)
