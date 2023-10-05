@@ -2355,7 +2355,6 @@ questdata.CheckOldQuest = (function(LevelFarm)
             CFrameQuest = CFrame.new(-1147.6552734375, 17.82676887512207, -14447.7099609375)
         end
     end
-    CFrameMon = CheckEnemySpawn(Monster) or CFrameMyMon
 end)
 
 return questdata
