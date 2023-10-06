@@ -15,21 +15,32 @@ end
 Priority.get = function(name)
     for i,v in ipairs(DataPriority) do 
         if v.Name == name then 
-            return v
-        end
-    end
-end
-Priority.set = function(name,ww)
-    for i,v in ipairs(DataPriority) do 
-        if v.Name == name then 
-            v.IsActive = ww
-            if ww then 
-                Priority.Recently = name
-            else
-                Priority.Recently = nil
+            local temp = function(f)
+                v.IsActive = f
+                if ww then 
+                    Priority.Recently = name
+                else
+                    Priority.Recently = nil
+                end
             end
-            
-            break
+            local temp2 = function()
+                local myid = v.PriorityId
+                for i,v2 in ipairs(DataPriority) do 
+                    if v2.Name ~= name then 
+                        if v2.PriorityId < myid and v2.IsActive == 3 then 
+                            return false
+                        end
+                        if v2.PriorityId < myid and v2.IsActive == 2 then 
+                            return true
+                        end
+                        if v2.PriorityId > myid and v2.IsActive > 1 then 
+                            return false
+                        end
+                    end
+                end
+                return true
+            end
+            return {data = v,set = temp,CanActive = temp2}
         end
     end
 end
@@ -39,23 +50,6 @@ Priority.GetClip = function()
             return v.IsActive > 1
         end
     end
-end
-Priority.canactive = function(name)
-    local myid = Priority.get(name).PriorityId
-    for i,v in ipairs(DataPriority) do 
-        if v.Name ~= name then 
-            if v.PriorityId < myid and v.IsActive == 3 then 
-                return false
-            end
-            if v.PriorityId < myid and v.IsActive == 2 then 
-                return true
-            end
-            if v.PriorityId > myid and v.IsActive > 1 then 
-                return false
-            end
-        end
-    end
-    return true
 end
 Priority.clear = function()
     Priority.Recently = nil
