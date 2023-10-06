@@ -27,18 +27,18 @@ Priority.get = function(name)
                 local myid = v.PriorityId
                 for i,v2 in ipairs(DataPriority) do 
                     if v2.Name ~= name then 
-                        if v2.PriorityId < myid and v2.IsActive == 3 then 
-                            return false
+                        if v2.PriorityId < myid and v2.IsActive == 1 then 
+                            return true
+                        end
+                        if v2.PriorityId > myid and v2.IsActive == 1 then 
+                            return true
                         end
                         if v2.PriorityId < myid and v2.IsActive == 2 then 
                             return true
                         end
-                        if v2.PriorityId > myid and v2.IsActive > 1 then 
-                            return false
-                        end
                     end
                 end
-                return true
+                return false
             end
             return {data = v,set = temp,CanActive = temp2}
         end
@@ -57,6 +57,5 @@ Priority.clear = function()
         v.IsActive = 1
     end
 end
-
 
 return Priority
