@@ -29,13 +29,13 @@ end
 Priority.canactive = function(name)
     local myid = Priority.get(name).PriorityId
     for i,v in ipairs(DataPriority) do 
-        if v.PriorityId < myid then 
+        if v.Name ~= name then 
             if v.IsActive == true then 
                 return false
             end
         end
-        return true
     end
+    return true
 end
 Priority.clear = function()
     for i,v in ipairs(DataPriority) do 
