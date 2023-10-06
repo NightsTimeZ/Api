@@ -2144,7 +2144,9 @@ do
         Toggles[Idx] = Toggle;
 
         Library:UpdateDependencyBoxes();
-        Library:SafeCallback(Toggle.Callback, Toggle.Value);
+        if Toggle.Value then 
+            Library:SafeCallback(Toggle.Callback, Toggle.Value);
+        end
         return Toggle;
     end;
 
@@ -2380,7 +2382,7 @@ do
         Groupbox:Resize();
 
         Options[Idx] = Slider;
-        Library:SafeCallback(Slider.Callback, Slider.Value);
+        
         return Slider;
     end;
 
