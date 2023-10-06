@@ -27,13 +27,12 @@ Priority.get = function(name)
                 local myid = v.PriorityId
                 for i,v2 in ipairs(DataPriority) do 
                     if v2.Name ~= name then 
-                        if v2.PriorityId < myid and v2.IsActive == 1 then 
+                        local He = v2.PriorityId
+                        local HeSet = v2.IsActive
+                        if (He < myid or He > myid) and HeSet == 1 then 
                             return true
                         end
-                        if v2.PriorityId > myid and v2.IsActive == 1 then 
-                            return true
-                        end
-                        if v2.PriorityId < myid and v2.IsActive == 2 then 
+                        if myid > He and HeSet == 2 then 
                             return true
                         end
                     end
