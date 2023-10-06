@@ -40,7 +40,7 @@ Priority.GetClip = function()
         end
     end
 end
-Priority.canactive = function(name)
+Priority.CanActive = function(name)
     local myid = Priority.get(name).PriorityId
     for i,v in ipairs(DataPriority) do 
         if v.Name ~= name then 
