@@ -2095,6 +2095,7 @@ do
 
             Library.RegistryMap[ToggleInner].Properties.BackgroundColor3 = Toggle.Value and 'AccentColor' or 'MainColor';
             Library.RegistryMap[ToggleInner].Properties.BorderColor3 = Toggle.Value and 'AccentColorDark' or 'OutlineColor';
+            Func(Toggle.Value);
         end;
 
         function Toggle:OnChanged(Func)
@@ -2311,6 +2312,7 @@ do
             },0.2,Enum.EasingStyle.Quad)
 
             HideBorderRight.Visible = not (X == Slider.MaxSize or X == 0);
+            Func(Slider.Value);
         end;
 
         function Slider:OnChanged(Func)
