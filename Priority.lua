@@ -19,6 +19,18 @@ Priority.get = function(name)
         end
     end
 end
+Priority.set = function(name,ww)
+    for i,v in ipairs(DataPriority) do 
+        if v.Name == name then 
+            v.IsActive = ww
+            if ww then 
+                Priority.Recently = name
+            end
+            
+            break
+        end
+    end
+end
 Priority.GetClip = function()
     for i,v in ipairs(DataPriority) do 
         if v.RequireClip == true then 
@@ -29,18 +41,19 @@ end
 Priority.canactive = function(name)
     local myid = Priority.get(name).PriorityId
     for i,v in ipairs(DataPriority) do 
-        if v.Name ~= name then 
+        if v.Name ~= name and v.PriorityId < myid then 
             if v.IsActive == true then 
                 return false
             end
         end
+        return true
     end
-    return true
 end
 Priority.clear = function()
     for i,v in ipairs(DataPriority) do 
         v.IsActive = false
     end
 end
+
 
 return Priority
