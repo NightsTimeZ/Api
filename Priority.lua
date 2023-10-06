@@ -5,7 +5,7 @@ Priority.new = function(name,clip)
     local IDPri = {
         Name = name,
         PriorityId = Priority_Count,
-        IsActive = false,
+        IsActive = 1, -- 1 false | 2 true but can rep | 3 real true
         RequireClip = clip
     }
     table.insert(DataPriority,IDPri)
@@ -25,6 +25,8 @@ Priority.set = function(name,ww)
             v.IsActive = ww
             if ww then 
                 Priority.Recently = name
+            else
+                Priority.Recently = nil
             end
             
             break
@@ -34,24 +36,31 @@ end
 Priority.GetClip = function()
     for i,v in ipairs(DataPriority) do 
         if v.RequireClip == true then 
-            return v.IsActive
+            return v.IsActive > 1
         end
     end
 end
 Priority.canactive = function(name)
     local myid = Priority.get(name).PriorityId
     for i,v in ipairs(DataPriority) do 
-        if v.Name ~= name and v.PriorityId < myid then 
-            if v.IsActive == true then 
+        if v.Name ~= name then 
+            if v.PriorityId < myid and v.IsActive == 3 then 
+                return false
+            end
+            if v.PriorityId < myid and v.IsActive == 2 then 
+                return true
+            end
+            if v.PriorityId > myid and v.IsActive > 1 then 
                 return false
             end
         end
-        return true
     end
+    return true
 end
 Priority.clear = function()
+    Priority.Recently = nil
     for i,v in ipairs(DataPriority) do 
-        v.IsActive = false
+        v.IsActive = 1
     end
 end
 
