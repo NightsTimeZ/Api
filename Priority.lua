@@ -23,7 +23,7 @@ Priority.set = function(name,ww)
     for i,v in ipairs(DataPriority) do 
         if v.Name == name then 
             v.IsActive = ww
-            if ww then 
+            if ww > 1 then 
                 Priority.Recently = name
             else
                 Priority.Recently = nil
@@ -46,7 +46,7 @@ Priority.CanActive = function(name)
         if v.Name ~= name then 
             local He = v.PriorityId
             local HeSet = v.IsActive
-            if (He < myid or He > myid) and HeSet == 1 then 
+            if He > myid and HeSet == 1 then 
                 return true
             end
             if He < myid and HeSet == 2 then 
@@ -54,7 +54,7 @@ Priority.CanActive = function(name)
             end
         end
     end
-    return true
+    return false
 end
 Priority.clear = function()
     for i,v in ipairs(DataPriority) do 
