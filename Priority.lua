@@ -5,7 +5,7 @@ Priority.new = function(name,clip)
     local IDPri = {
         Name = name,
         PriorityId = Priority_Count,
-        IsActive = 1, -- 1 false | 2 only clip | 3 real true
+        IsActive = false, -- 1 false | 2 only clip | 3 real true
         RequireClip = clip
     }
     table.insert(DataPriority,IDPri)
@@ -18,67 +18,42 @@ end
 Priority.get = function(name)
     for i,v in ipairs(DataPriority) do 
         if v.Name == name then 
-            return v
+
+            local data = {
+                CanActive = function()
+                    for i,s in ipairs(DataPriority) do 
+                        if s.Name == name and s.IsActive then return true end
+                        if s.IsActive and s.Name ~= name then 
+                            return false
+                        end
+                    end
+                    return true
+                end,
+                set = function(ww)
+                    v.IsActive = ww
+                    if ww then 
+                        Priority.Recently = name
+                    else
+                        Priority.Recently = nil
+                    end
+                end
+            }
+            return data
         end
     end
 end
-Priority.set = function(name,ww)
-    for i,v in ipairs(DataPriority) do 
-        if v.Name == name then 
-            v.IsActive = ww
-            if ww > 1 then 
-                Priority.Recently = name
-            else
-                Priority.Recently = nil
-            end
-            
-            break
-        end
-    end
-end
+
 Priority.GetClip = function()
     for i,v in ipairs(DataPriority) do 
         if v.RequireClip == true then 
-            return v.IsActive > 1
+            return v.IsActive
         end
     end
 end
-Priority.CanActive = function(name)
-    local yap = false
-    local lowthen = false
-    local myid = Priority.get(name).PriorityId
-    local not3atlow = false
-    for i,v in ipairs(DataPriority) do 
-        local HeSet = v.IsActive
-        if v.Name == name then 
-            lowthen = true  
-        else
-            if lowthen then 
-                if HeSet == 1 then 
-                    yap = true
-                end
-                if HeSet == 3 then 
-                    yap = false
-                    break
-                end
-            
-            else
-                if HeSet == 1 then 
-                    yap = true
-                end
-                if HeSet == 3 then 
-                    yap = false
-                    break
-                end
-            end
-        end
-        
-    end
-    return yap
-end
+
 Priority.clear = function()
     for i,v in ipairs(DataPriority) do 
-        v.IsActive = 1
+        v.IsActive = false
     end
 end
 
@@ -90,24 +65,23 @@ return Priority
 -- task.spawn(function()
 --     while task.wait(0.4) do 
 --         print("--------",Priority.Recently)
---         if Priority.CanActive("1") then 
+--         if Priority.get("1").CanActive() then 
 --             print(1)
 --         end
---         if Priority.CanActive("2") then 
+--         if Priority.get("2").CanActive() then 
 --             print(2)
 --         end
---         if Priority.CanActive("3") then 
+--         if Priority.get("3").CanActive() then 
 --             print(3)
 --         end
 --     end
 -- end)
 
 -- task.wait(1)
--- print("pri to 3")
--- Priority.set("2",3)
--- task.wait(1)
 -- print("pri to 2")
--- Priority.set("2",2)
+-- Priority.get("1").set(true)
+-- Priority.get("2").set(true)
 -- task.wait(1)
 -- print("pri to 1")
--- Priority.set("2",1)
+-- Priority.get("1").set(false)
+-- Priority.get("2").set(false)
