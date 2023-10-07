@@ -10,6 +10,9 @@ Priority.new = function(name,clip)
     }
     table.insert(DataPriority,IDPri)
     Priority_Count = Priority_Count + 1
+    table.sort(DataPriority,function(a,b)
+        return a.PriorityId < b.PriorityId
+    end)
     return Priority
 end
 Priority.get = function(name)
@@ -36,25 +39,42 @@ end
 Priority.GetClip = function()
     for i,v in ipairs(DataPriority) do 
         if v.RequireClip == true then 
-            return v.IsActive
+            return v.IsActive > 1
         end
     end
 end
 Priority.CanActive = function(name)
+    local yap = false
+    local lowthen = false
     local myid = Priority.get(name).PriorityId
+    local not3atlow = false
     for i,v in ipairs(DataPriority) do 
-        if v.Name ~= name then 
-            local He = v.PriorityId
-            local HeSet = v.IsActive
-            if He > myid and HeSet == 1 then 
-                return true
-            end
-            if He < myid and HeSet == 2 then 
-                return true
+        local HeSet = v.IsActive
+        if v.Name == name then 
+            lowthen = true  
+        else
+            if lowthen then 
+                if HeSet == 1 or HeSet == 2 then 
+                    yap = true
+                end
+                if HeSet == 3 then 
+                    yap = false
+                    break
+                end
+            
+            else
+                if HeSet == 1 then 
+                    yap = true
+                end
+                if HeSet == 2 or HeSet == 3 then 
+                    yap = false
+                    break
+                end
             end
         end
+        
     end
-    return false
+    return yap
 end
 Priority.clear = function()
     for i,v in ipairs(DataPriority) do 
@@ -63,4 +83,30 @@ Priority.clear = function()
 end
 
 
-return Priority
+Priority.new('1').new("2").new('3')
+
+
+task.spawn(function()
+    while task.wait(0.4) do 
+        print("--------",Priority.Recently)
+        if Priority.CanActive("1") then 
+            print(1)
+        end
+        if Priority.CanActive("2") then 
+            print(2)
+        end
+        if Priority.CanActive("3") then 
+            print(3)
+        end
+    end
+end)
+
+task.wait(1)
+print("pri to 3")
+Priority.set("2",3)
+task.wait(1)
+print("pri to 2")
+Priority.set("2",2)
+task.wait(1)
+print("pri to 1")
+Priority.set("2",1)
