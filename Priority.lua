@@ -5,7 +5,7 @@ Priority.new = function(name,clip)
     local IDPri = {
         Name = name,
         PriorityId = Priority_Count,
-        IsActive = 1, -- 1 false | 2 true but can rep | 3 real true
+        IsActive = 1, -- 1 false | 2 only clip | 3 real true
         RequireClip = clip
     }
     table.insert(DataPriority,IDPri)
@@ -54,7 +54,7 @@ Priority.CanActive = function(name)
             lowthen = true  
         else
             if lowthen then 
-                if HeSet == 1 or HeSet == 2 then 
+                if HeSet == 1 then 
                     yap = true
                 end
                 if HeSet == 3 then 
@@ -66,7 +66,7 @@ Priority.CanActive = function(name)
                 if HeSet == 1 then 
                     yap = true
                 end
-                if HeSet == 2 or HeSet == 3 then 
+                if HeSet == 3 then 
                     yap = false
                     break
                 end
