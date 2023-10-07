@@ -46,9 +46,12 @@ end
 Priority.GetClip = function()
     for i,v in ipairs(DataPriority) do 
         if v.RequireClip == true then 
-            return v.IsActive
+            if v.IsActive then 
+                return true
+            end
         end
     end
+    return false
 end
 
 Priority.clear = function()
