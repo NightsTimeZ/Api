@@ -82,31 +82,32 @@ Priority.clear = function()
     end
 end
 
+return Priority
 
-Priority.new('1').new("2").new('3')
+-- Priority.new('1').new("2").new('3')
 
 
-task.spawn(function()
-    while task.wait(0.4) do 
-        print("--------",Priority.Recently)
-        if Priority.CanActive("1") then 
-            print(1)
-        end
-        if Priority.CanActive("2") then 
-            print(2)
-        end
-        if Priority.CanActive("3") then 
-            print(3)
-        end
-    end
-end)
+-- task.spawn(function()
+--     while task.wait(0.4) do 
+--         print("--------",Priority.Recently)
+--         if Priority.CanActive("1") then 
+--             print(1)
+--         end
+--         if Priority.CanActive("2") then 
+--             print(2)
+--         end
+--         if Priority.CanActive("3") then 
+--             print(3)
+--         end
+--     end
+-- end)
 
-task.wait(1)
-print("pri to 3")
-Priority.set("2",3)
-task.wait(1)
-print("pri to 2")
-Priority.set("2",2)
-task.wait(1)
-print("pri to 1")
-Priority.set("2",1)
+-- task.wait(1)
+-- print("pri to 3")
+-- Priority.set("2",3)
+-- task.wait(1)
+-- print("pri to 2")
+-- Priority.set("2",2)
+-- task.wait(1)
+-- print("pri to 1")
+-- Priority.set("2",1)
