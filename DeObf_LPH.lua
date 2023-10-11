@@ -9,6 +9,245 @@ end
 
 local questdata = {}
 
+questdata.CheckQuestBossWithFarm = function(SelectBoss)
+    local MyLevel = game.Players.LocalPlayer.Data.Level.Value
+    if OldWorld then
+        if MyLevel >= 20 and NowQuest == "JungleQuest" and havemob("The Gorilla King [Lv. 25] [Boss]") then -- Gorilla King
+
+            Bosses = "The Gorilla King [Lv. 25] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "King"
+
+            CFrameBoss = CFrame.new(-1196.4288330078125, 6.791248798370361, -448.4755554199219)
+
+        elseif MyLevel >= 55 and NowQuest == "BuggyQuest1" and havemob("Bobby [Lv. 55] [Boss]") then -- Bobby
+
+            Bosses = "Bobby [Lv. 55] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Bobby"
+
+            CFrameBoss = CFrame.new(-1097.8865966796875, 27.307741165161133, 4051.182373046875)
+
+        elseif MyLevel >= 105 and NowQuest == "SnowQuest" and havemob("Yeti [Lv. 110] [Boss]") then -- Bobby
+
+            Bosses = "Yeti [Lv. 110] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Yeti"
+
+            CFrameBoss = CFrame.new(1202.99462890625, 143.6376495361328, -1550.9326171875)
+
+        elseif MyLevel >= 130 and NowQuest == "MarineQuest2" and havemob("Vice Admiral [Lv. 130] [Boss]") then -- Bobby
+
+            Bosses = "Vice Admiral [Lv. 130] [Boss]"
+
+            LevelQuestBoss = 2
+            NameCheckQuestBoss = "Vice"
+
+            CFrameBoss = CFrame.new(-5087.49267578125, 98.71009826660156, 4406.0498046875)
+
+        elseif MyLevel >= 220 and NowQuest == "PrisonerQuest" and havemob("Warden [Lv. 220] [Boss]") then -- Bobby
+
+            Bosses = "Warden [Lv. 220] [Boss]"
+
+            LevelQuestBoss = 1
+            NameCheckQuestBoss = "t Warden"
+            NameQuest = "ImpelQuest"
+
+            CFrameQuest = CFrame.new(5190.45703125, 2.5952436923980713, 688.2589111328125)
+            CFrameBoss = CFrame.new(5184.12744140625, 57.404136657714844, 829.398681640625)
+
+        elseif MyLevel >= 230 and NowQuest == "PrisonerQuest" and havemob("Chief Warden [Lv. 230] [Boss]") then -- Bobby
+
+            Bosses = "Chief Warden [Lv. 230] [Boss]"
+
+            LevelQuestBoss = 2
+            NameCheckQuestBoss = "Chief"
+            NameQuest = "ImpelQuest"
+
+            CFrameQuest = CFrame.new(5190.45703125, 2.5952436923980713, 688.2589111328125)
+            CFrameBoss = CFrame.new(5184.12744140625, 57.404136657714844, 829.398681640625)
+
+        elseif MyLevel >= 230 and NowQuest == "PrisonerQuest" and havemob("Swan [Lv. 240] [Boss]") then -- Bobby
+
+            Bosses = "Swan [Lv. 240] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Swan"
+            NameQuest = "ImpelQuest"
+
+            CFrameQuest = CFrame.new(5190.45703125, 2.5952436923980713, 688.2589111328125)
+            CFrameBoss = CFrame.new(5184.12744140625, 57.404136657714844, 829.398681640625)
+
+        elseif MyLevel >= 350 and NowQuest == "MagmaQuest" and havemob("Magma Admiral [Lv. 350] [Boss]") then -- Bobby
+
+            Bosses = "Magma Admiral [Lv. 350] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Admiral"
+
+            CFrameBoss = CFrame.new(-5682.41064453125, 16.40520668029785, 8751.5849609375)
+
+        elseif MyLevel >= 425 and NowQuest == "FishmanQuest" and havemob("Fishman Lord [Lv. 425] [Boss]") then -- Bobby
+
+            Bosses = "Fishman Lord [Lv. 425] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Lord"
+
+            CFrameBoss = CFrame.new(61347.0078125, 30.053680419921875, 1125.32177734375)
+
+        elseif MyLevel >= 500 and NowQuest == "SkyExp1Quest" and havemob("Wysper [Lv. 500] [Boss]") then -- Bobby
+
+            Bosses = "Wysper [Lv. 500] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Wysper"
+
+            CFrameBoss = CFrame.new(-7811.53271484375, 5585.1279296875, -652.8221435546875)
+
+        elseif MyLevel >= 575 and NowQuest == "SkyExp2Quest" and havemob("Thunder God [Lv. 575] [Boss]") then -- Bobby
+
+            Bosses = "Thunder God [Lv. 575] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Thunder"
+
+            CFrameBoss = CFrame.new(-7795.9287109375, 5605.951171875, -2231.444580078125)
+
+        elseif MyLevel >= 675 and NowQuest == "FountainQuest" and havemob("Cyborg [Lv. 675] [Boss]") then -- Bobby
+
+            Bosses = "Cyborg [Lv. 675] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Cyborg"
+
+            CFrameBoss = CFrame.new(6026.85498046875, 56.75627136230469, 3911.870849609375)
+
+        else
+            Bosses = ""
+        end
+    elseif NewWorld then
+        if MyLevel >= 750 and NowQuest == "Area1Quest" and havemob("Diamond [Lv. 750] [Boss]") then -- Bobby
+
+            Bosses = "Diamond [Lv. 750] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Diamond"
+
+            CFrameBoss = CFrame.new(-1768.1483154296875, 315.549560546875, -61.178192138671875)
+
+        elseif MyLevel >= 850 and NowQuest == "Area2Quest" and havemob("Jeremy [Lv. 850] [Boss]") then -- Bobby
+
+            Bosses = "Jeremy [Lv. 850] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Jeremy"
+
+            CFrameBoss = CFrame.new(2035.4229736328125, 447.9889221191406, 712.2064819335938)
+
+        elseif MyLevel >= 925 and NowQuest == "MarineQuest3" and havemob("Fajita [Lv. 925] [Boss]") then -- Bobby
+
+            Bosses = "Fajita [Lv. 925] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Fajita"
+
+            CFrameBoss = CFrame.new(-2123.315673828125, 89.35710144042969, -4079.322021484375)
+
+        elseif MyLevel >= 1150 and NowQuest == "IceSideQuest" and havemob("Smoke Admiral [Lv. 1150] [Boss]") then -- Bobby
+
+            Bosses = "Smoke Admiral [Lv. 1150] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Smoke Admiral"
+
+            CFrameBoss = CFrame.new(-5106.25146484375, 22.789506912231445, -5341.25146484375)
+
+        elseif MyLevel >= 1400 and NowQuest == "FrostQuest" and havemob("Awakened Ice Admiral [Lv. 1400] [Boss]") then -- Bobby
+
+            Bosses = "Awakened Ice Admiral [Lv. 1400] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Awakened Ice Admiral"
+
+            CFrameBoss = CFrame.new(6407.33935546875, 339.2467041015625, -6892.52099609375)
+
+        elseif MyLevel >= 1475 and NowQuest == "ForgottenQuest" and havemob("Tide Keeper [Lv. 1475] [Boss]") then -- Bobby
+
+            Bosses = "Tide Keeper [Lv. 1475] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Tide Keeper"
+
+            CFrameBoss = CFrame.new(-3570.1865234375, 123.32894897460938, -11555.9072265625)
+
+        else
+            Bosses = ""
+        end
+    elseif ThreeWorld then
+        if MyLevel >= 1550 and NowQuest == "PiratePortQuest" and havemob("Stone [Lv. 1550] [Boss]") then -- Bobby
+
+            Bosses = "Stone [Lv. 1550] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Stone"
+
+            CFrameBoss = CFrame.new(-1141.4222412109375, 96.33948516845703, 6993.21337890625)
+
+        elseif MyLevel >= 1675 and NowQuest == "AmazonQuest2" and havemob("Island Empress [Lv. 1675] [Boss]") then -- Bobby
+
+            Bosses = "Island Empress [Lv. 1675] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Island Empress"
+
+            CFrameBoss = CFrame.new(5567.677734375, 650.8583374023438, 195.727783203125)
+
+        elseif MyLevel >= 1750 and NowQuest == "MarineTreeIsland" and havemob("Kilo Admiral [Lv. 1750] [Boss]") then -- Bobby
+
+            Bosses = "Kilo Admiral [Lv. 1750] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Kilo Admiral"
+
+            CFrameBoss = CFrame.new(2915.359375, 455.9102783203125, -7375.900390625)
+
+        elseif MyLevel >= 1875 and NowQuest == "DeepForestIsland" and havemob("Captain Elephant [Lv. 1875] [Boss]") then -- Bobby
+
+            Bosses = "Captain Elephant [Lv. 1875] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Elephant"
+
+            CFrameBoss = CFrame.new(-13351.3642578125, 404.9483642578125, -8570.650390625)
+
+        elseif MyLevel >= 1950 and NowQuest == "DeepForestIsland2" and havemob("Beautiful Pirate [Lv. 1950] [Boss]") then -- Bobby
+
+            Bosses = "Beautiful Pirate [Lv. 1950] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Beautiful"
+
+            CFrameBoss = CFrame.new(5314.58203125, 21.594484329223633, -125.94227600097656)
+
+        elseif MyLevel >= 2175 and NowQuest == "IceCreamIslandQuest" and havemob("Cake Queen [Lv. 2175] [Boss]") then -- Bobby
+
+            Bosses = "Cake Queen [Lv. 2175] [Boss]"
+
+            LevelQuestBoss = 3
+            NameCheckQuestBoss = "Cake Queen"
+
+            CFrameBoss = CFrame.new(-717.3067016601562, 380.62359619140625, -11006.7158203125)
+
+        else
+            Bosses = ""
+        end
+    end
+end
+
 questdata.CheckQuestBoss = function(SelectBoss)
     -- Old World
     if SelectBoss == "Saber Expert [Lv. 200] [Boss]" then
