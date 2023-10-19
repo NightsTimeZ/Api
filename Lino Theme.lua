@@ -499,9 +499,7 @@ do
         local ToggleLabel = self.TextLabel;
 
         ToggleLabel.Size = UDim2.new(1,-4,0,25)
-        -- local Container = self.Container;
 
-        assert(Info.Default, 'AddColorPicker: Missing default value.');
 
         local ColorPicker = {
             Value = Info.Default;
@@ -1119,7 +1117,6 @@ do
         local ToggleLabel = self.TextLabel;
         local Container = self.Container;
 
-        assert(Info.Default, 'AddKeyPicker: Missing default value.');
 
         local KeyPicker = {
             Value = Info.Default;
@@ -1559,7 +1556,7 @@ do
                 Obj.Func = select(2, ...)
             end
 
-            assert(type(Obj.Func) == 'function', 'AddButton: `Func` callback is missing.');
+
         end
 
         ProcessButtonParams('Button', Button, ...)
@@ -1791,7 +1788,7 @@ do
     end
 
     function Funcs:AddInput(Idx, Info)
-        assert(Info.Text, 'AddInput: Missing `Text` string.')
+
 
         local Textbox = {
             Value = Info.Default or '';
@@ -1985,7 +1982,6 @@ do
     end;
 
     function Funcs:AddToggle(Idx, Info)
-        assert(Info.Text, 'AddInput: Missing `Text` string.')
 
         local Toggle = {
             Value = Info.Default or false;
@@ -2151,11 +2147,7 @@ do
     end;
 
     function Funcs:AddSlider(Idx, Info)
-        assert(Info.Default, 'AddSlider: Missing default value.');
-        assert(Info.Text, 'AddSlider: Missing slider text.');
-        assert(Info.Min, 'AddSlider: Missing minimum value.');
-        assert(Info.Max, 'AddSlider: Missing maximum value.');
-        assert(Info.Rounding, 'AddSlider: Missing rounding value.');
+
 
         local Slider = {
             Value = Info.Default;
@@ -2395,8 +2387,7 @@ do
             Info.AllowNull = true;
         end;
 
-        assert(Info.Values, 'AddDropdown: Missing dropdown value list.');
-        assert(Info.AllowNull or Info.Default, 'AddDropdown: Missing default value. Pass `AllowNull` as true if this was intentional.')
+
 
         if (not Info.Text) then
             Info.Compact = true;
@@ -3021,9 +3012,7 @@ do
 
         function Depbox:SetupDependencies(Dependencies)
             for _, Dependency in next, Dependencies do
-                assert(type(Dependency) == 'table', 'SetupDependencies: Dependency is not of type `table`.');
-                assert(Dependency[1], 'SetupDependencies: Dependency is missing element argument.');
-                assert(Dependency[2] ~= nil, 'SetupDependencies: Dependency is missing value argument.');
+
             end;
 
             Depbox.Dependencies = Dependencies;
@@ -3431,11 +3420,14 @@ function Library:CreateWindow(...)
         BackgroundColor3 = 'BackgroundColor';
     });
 
-    local TabArea = Library:Create('Frame', {
+    local TabArea = Library:Create('ScrollingFrame', {
         BackgroundTransparency = 1;
         Position = UDim2.new(0, 8, 0, 8);
         Size = UDim2.new(1, -16, 0, 21);
+        ScrollBarThickness = 0;
         ZIndex = 1;
+        ClipsDescendants = true,
+        
         Parent = MainSectionInner;
     });
 
@@ -3445,6 +3437,12 @@ function Library:CreateWindow(...)
         SortOrder = Enum.SortOrder.LayoutOrder;
         Parent = TabArea;
     });
+
+    task.spawn(function()
+        while task.wait(0.001) do 
+            TabArea.CanvasSize = UDim2.new(0,TabListLayout.AbsoluteContentSize.X + 5,0,0)
+        end
+    end)
 
     local TabContainer = Library:Create('Frame', {
         BackgroundColor3 = Color3.fromRGB(35,35,35);--Library.MainColor;
@@ -3475,7 +3473,7 @@ function Library:CreateWindow(...)
             Groupboxes = {};
             Tabboxes = {};
         };
-
+        
         local TabButtonWidth = Library:GetTextBounds(Name, Library.Font, 16);
 
         local TabButton = Library:Create('Frame', {
