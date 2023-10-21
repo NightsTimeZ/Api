@@ -1672,6 +1672,28 @@ questdata.CheckQuest = (function()
 
             CFrameMyMon = CFrame.new(-16749.416015625, 125.9124755859375, -272.1277770996094)
             CFrameQuest = CFrame.new(-16545.927734375, 55.68635559082031, -173.01036071777344)
+        elseif MyLevel == 2500 or MyLevel <= 2524 then
+            LevelFarm = 35
+
+            Name = "Sun-kissed Warrior [Lv. 2500]"
+            NameQuest = "TikiQuest2"
+
+            LevelQuest = 1
+            NameCheckQuest = "Sun-kissed Warrior"
+
+            CFrameMyMon = CFrame.new(-16277.009765625, 68.78734588623047, 1041.3009033203125)
+            CFrameQuest = CFrame.new(-16538.888671875, 55.68632888793945, 1051.730712890625)
+        elseif MyLevel >= 2525 then
+            LevelFarm = 36
+
+            Name = "Isle Champion [Lv. 2525]"
+            NameQuest = "TikiQuest2"
+
+            LevelQuest = 2
+            NameCheckQuest = "Isle Champion"
+
+            CFrameMyMon = CFrame.new(-16743.2421875, 137.21322631835938, 1148.2789306640625)
+            CFrameQuest = CFrame.new(-16538.888671875, 55.68632888793945, 1051.730712890625)
         end
     end
     CFrameMon = CheckEnemySpawn(Monster) or CFrameMyMon
@@ -2654,25 +2676,23 @@ questdata.CheckOldQuest = (function(LevelFarm)
             CFrameMyMon = CFrame.new(-16749.416015625, 125.9124755859375, -272.1277770996094)
             CFrameQuest = CFrame.new(-16545.927734375, 55.68635559082031, -173.01036071777344)
         elseif LevelFarm == 35 then
-            Monster = "ssssss"
-            NameQuest = "sssss"
+            Monster = "Sun-kissed Warrior [Lv. 2500]"
+            NameQuest = "TikiQuest2"
 
-            LevelQuest = 0
-            NameCheckQuest = "sssss"
+            LevelQuest = 1
+            NameCheckQuest = "Sun-kissed Warrior"
 
-            CFrameMyMon = CFrame.new(0)
-
-            CFrameQuest = CFrame.new(0)
+            CFrameMyMon = CFrame.new(-16277.009765625, 68.78734588623047, 1041.3009033203125)
+            CFrameQuest = CFrame.new(-16538.888671875, 55.68632888793945, 1051.730712890625)
         elseif LevelFarm == 36 then
-            Monster = "ssssss"
-            NameQuest = "sssss"
+            Monster = "Isle Champion [Lv. 2525]"
+            NameQuest = "TikiQuest2"
 
-            LevelQuest = 0
-            NameCheckQuest = "sssss"
+            LevelQuest = 2
+            NameCheckQuest = "Isle Champion"
 
-            CFrameMyMon = CFrame.new(0)
-
-            CFrameQuest = CFrame.new(0)
+            CFrameMyMon = CFrame.new(-16743.2421875, 137.21322631835938, 1148.2789306640625)
+            CFrameQuest = CFrame.new(-16538.888671875, 55.68632888793945, 1051.730712890625)
         end
     end
 end)
