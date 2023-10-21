@@ -7,6 +7,27 @@ elseif placeId == 7449423635 then
     ThreeWorld = true
 end
 
+task.spawn(function()
+    while task.wait() do 
+        pcall(function()
+            for _, v in pairs(game.Workspace.Enemies:GetChildren()) do
+                if v:IsA("Model") then  
+                    if v:FindFirstChild("Humanoid") and v.Name ~= v:FindFirstChild("Humanoid").DisplayName then
+                        v.Name = v:FindFirstChild("Humanoid").DisplayName
+                    end
+                end
+            end
+            for _, v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
+                if v:IsA("Model") then  
+                    if v:FindFirstChild("Humanoid") and v.Name ~= v:FindFirstChild("Humanoid").DisplayName then
+                        v.Name = v:FindFirstChild("Humanoid").DisplayName
+                    end
+                end
+            end
+        end)
+    end
+end)
+
 local questdata = {}
 
 questdata.CheckQuestBossWithFarm = function(SelectBoss)
@@ -1617,7 +1638,7 @@ questdata.CheckQuest = (function()
             CFrameMyMon = CFrame.new(-1271.6993408203125, 139.93331909179688, -14354.8515625)
 
             CFrameQuest = CFrame.new(-1147.6552734375, 17.82676887512207, -14447.7099609375)
-        elseif MyLevel >= 2425 then
+        elseif MyLevel == 2425 or MyLevel <= 2449 then
             LevelFarm = 32
 
             Monster = "Snow Demon [Lv. 2425]"
@@ -1629,6 +1650,28 @@ questdata.CheckQuest = (function()
             CFrameMyMon = CFrame.new(-844.35546875, 138.32464599609375, -14496.455078125)
 
             CFrameQuest = CFrame.new(-1147.6552734375, 17.82676887512207, -14447.7099609375)
+        elseif MyLevel == 2450 or MyLevel <= 2474 then
+            LevelFarm = 33
+
+            Name = "Isle Outlaw [Lv. 2450]"
+            NameQuest = "TikiQuest1"
+
+            LevelQuest = 1
+            NameCheckQuest = "Isle Outlaw"
+
+            CFrameMyMon = CFrame.new(-16277.9599609375, 94.06755828857422, -168.73194885253906)
+            CFrameQuest = CFrame.new(-16545.927734375, 55.68635559082031, -173.01036071777344)
+        elseif MyLevel == 2475 or MyLevel <= 2499 then
+            LevelFarm = 34
+
+            Name = "Island Boy [Lv. 2475]"
+            NameQuest = "TikiQuest1"
+
+            LevelQuest = 2
+            NameCheckQuest = "Island Boy"
+
+            CFrameMyMon = CFrame.new(-16749.416015625, 125.9124755859375, -272.1277770996094)
+            CFrameQuest = CFrame.new(-16545.927734375, 55.68635559082031, -173.01036071777344)
         end
     end
     CFrameMon = CheckEnemySpawn(Monster) or CFrameMyMon
@@ -2592,6 +2635,44 @@ questdata.CheckOldQuest = (function(LevelFarm)
             CFrameMyMon = CFrame.new(-844.35546875, 138.32464599609375, -14496.455078125)
 
             CFrameQuest = CFrame.new(-1147.6552734375, 17.82676887512207, -14447.7099609375)
+        elseif LevelFarm == 33 then
+            Monster = "Isle Outlaw [Lv. 2450]"
+            NameQuest = "TikiQuest1"
+
+            LevelQuest = 1
+            NameCheckQuest = "Isle Outlaw"
+
+            CFrameMyMon = CFrame.new(-16277.9599609375, 94.06755828857422, -168.73194885253906)
+            CFrameQuest = CFrame.new(-16545.927734375, 55.68635559082031, -173.01036071777344)
+        elseif LevelFarm == 34 then
+            Monster = "Island Boy [Lv. 2475]"
+            NameQuest = "TikiQuest1"
+
+            LevelQuest = 2
+            NameCheckQuest = "Island Boy"
+
+            CFrameMyMon = CFrame.new(-16749.416015625, 125.9124755859375, -272.1277770996094)
+            CFrameQuest = CFrame.new(-16545.927734375, 55.68635559082031, -173.01036071777344)
+        elseif LevelFarm == 35 then
+            Monster = "ssssss"
+            NameQuest = "sssss"
+
+            LevelQuest = 0
+            NameCheckQuest = "sssss"
+
+            CFrameMyMon = CFrame.new(0)
+
+            CFrameQuest = CFrame.new(0)
+        elseif LevelFarm == 36 then
+            Monster = "ssssss"
+            NameQuest = "sssss"
+
+            LevelQuest = 0
+            NameCheckQuest = "sssss"
+
+            CFrameMyMon = CFrame.new(0)
+
+            CFrameQuest = CFrame.new(0)
         end
     end
 end)
