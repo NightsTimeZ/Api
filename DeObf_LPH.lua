@@ -1653,7 +1653,7 @@ questdata.CheckQuest = (function()
         elseif MyLevel == 2450 or MyLevel <= 2474 then
             LevelFarm = 33
 
-            Name = "Isle Outlaw [Lv. 2450]"
+            Monster = "Isle Outlaw [Lv. 2450]"
             NameQuest = "TikiQuest1"
 
             LevelQuest = 1
@@ -1664,7 +1664,7 @@ questdata.CheckQuest = (function()
         elseif MyLevel == 2475 or MyLevel <= 2499 then
             LevelFarm = 34
 
-            Name = "Island Boy [Lv. 2475]"
+            Monster = "Island Boy [Lv. 2475]"
             NameQuest = "TikiQuest1"
 
             LevelQuest = 2
@@ -1675,7 +1675,7 @@ questdata.CheckQuest = (function()
         elseif MyLevel == 2500 or MyLevel <= 2524 then
             LevelFarm = 35
 
-            Name = "Sun-kissed Warrior [Lv. 2500]"
+            Monster = "Sun-kissed Warrior [Lv. 2500]"
             NameQuest = "TikiQuest2"
 
             LevelQuest = 1
@@ -1686,7 +1686,7 @@ questdata.CheckQuest = (function()
         elseif MyLevel >= 2525 then
             LevelFarm = 36
 
-            Name = "Isle Champion [Lv. 2525]"
+            Monster = "Isle Champion [Lv. 2525]"
             NameQuest = "TikiQuest2"
 
             LevelQuest = 2
@@ -1696,7 +1696,7 @@ questdata.CheckQuest = (function()
             CFrameQuest = CFrame.new(-16538.888671875, 55.68632888793945, 1051.730712890625)
         end
     end
-    CFrameMon = CheckEnemySpawn(Monster) or CFrameMyMon
+    
 end)
 
 questdata.CheckOldQuest = (function(LevelFarm)
