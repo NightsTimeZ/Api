@@ -2677,6 +2677,7 @@ function Library:CreateWindow(...)
         Position = Config.Position,
         Size = UDim2.new(0,0,0,0),
         Visible = false;
+        ClipsDescendants = true,
         ZIndex = 1;
         Parent = ScreenGui;
     });
