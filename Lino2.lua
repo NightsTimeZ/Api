@@ -1369,7 +1369,7 @@ do
             BorderSizePixel = 0 ;
             Size = UDim2.new(1, 0, 1, 0);
             ZIndex = 6;
-            Text = ""
+            Text = "";
             Parent = ToggleOuter;
         });
 
