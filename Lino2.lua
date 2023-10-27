@@ -1471,13 +1471,10 @@ do
             Library:SafeCallback(Toggle.Changed, Toggle.Value);
             Library:UpdateDependencyBoxes();
         end;
-
-        ToggleRegion.InputBegan:Connect(function(Input)
-            if Input.UserInputType == Enum.UserInputType.Touch and not Library:MouseIsOverOpenedFrame() then
-                Toggle:SetValue(not Toggle.Value) -- Why was it not like this from the start?
-                Library:AttemptSave();
-            end;
-        end);
+        ToggleRegion.MouseButton1Click:Connect(function(Input)
+            Toggle:SetValue(not Toggle.Value) -- Why was it not like this from the start?
+            Library:AttemptSave();
+        end)
 
         if Toggle.Risky then
             Library:RemoveFromRegistry(ToggleLabel)
