@@ -1369,7 +1369,6 @@ do
             BorderSizePixel = 0 ;
             Size = UDim2.new(1, 0, 1, 0);
             ZIndex = 6;
-            Text = "";
             Parent = ToggleOuter;
         });
 
@@ -1410,6 +1409,8 @@ do
             BackgroundTransparency = 1;
             Size = UDim2.new(0, 170, 1, 0);
             ZIndex = 8;
+            TextTransparency = 1;
+            Text = "";
             Parent = ToggleOuter;
         });
 
