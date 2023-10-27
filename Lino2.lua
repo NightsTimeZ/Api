@@ -1369,6 +1369,7 @@ do
             BorderSizePixel = 0 ;
             Size = UDim2.new(1, 0, 1, 0);
             ZIndex = 6;
+            Text = ""
             Parent = ToggleOuter;
         });
 
@@ -1405,7 +1406,7 @@ do
             Parent = ToggleLabel;
         });
 
-        local ToggleRegion = Library:Create('Frame', {
+        local ToggleRegion = Library:Create('TextButton', {
             BackgroundTransparency = 1;
             Size = UDim2.new(0, 170, 1, 0);
             ZIndex = 8;
@@ -1471,7 +1472,7 @@ do
             Library:SafeCallback(Toggle.Changed, Toggle.Value);
             Library:UpdateDependencyBoxes();
         end;
-        ToggleRegion.MouseButton1Click:Connect(function(Input)
+        ToggleRegion.MouseButton1Click:Connect(function()
             Toggle:SetValue(not Toggle.Value) -- Why was it not like this from the start?
             Library:AttemptSave();
         end)
