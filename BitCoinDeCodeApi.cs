@@ -1,3 +1,4 @@
+fask = task
 local PlaceID = game.PlaceId
 			local AllIDs = {}
 			local foundAnything = ""
