@@ -1,5 +1,12 @@
 local Account = {} Account.__index = Account
+if not getgenv().Key then 
+if not _G.Key then 
+game.Players.LocalPlayer:Kick("hades so noob") 
 
+    task. wait(1) 
+    while true do end
+  end
+end
 local WebserverSettings = {
     Port = '7963',
     Password = ''
