@@ -1,12 +1,5 @@
 local ServerFunc = {}
-if not getgenv().Key then 
-if not _G.Key then 
-game.Players.LocalPlayer:Kick("hades so noob") 
 
-    task. wait(1) 
-    while true do end
-  end
-end
 function ServerFunc:NormalTeleport()
 	task.delay(15,function()
 		pcall(function()
