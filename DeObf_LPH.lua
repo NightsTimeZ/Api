@@ -2323,7 +2323,7 @@ questdata.CheckOldQuest = (function(LevelFarm)
             NameQuest = "AmazonQuest"
 
             LevelQuest = 2
-            NameCheckQuest = "Archer"
+            NameCheckQuest = "Dragon Crew Archer"
 
             CFrameMyMon = CFrame.new(6594, 383, 139)
             VectorMon = Vector3.new(6594, 383, 139)
@@ -2335,7 +2335,7 @@ questdata.CheckOldQuest = (function(LevelFarm)
             NameQuest = "AmazonQuest2"
 
             LevelQuest = 1
-            NameCheckQuest = "Female"
+            NameCheckQuest = "Female Islander"
 
             CFrameMyMon = CFrame.new(5308, 819, 1047)
             VectorMon = Vector3.new(5308, 819, 1047)
