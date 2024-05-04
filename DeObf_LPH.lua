@@ -7,26 +7,29 @@ elseif placeId == 7449423635 then
     ThreeWorld = true
 end
 
-task.spawn(function()
-    while task.wait() do 
-        pcall(function()
-            for _, v in pairs(game.Workspace.Enemies:GetChildren()) do
-                if v:IsA("Model") then  
-                    if v:FindFirstChild("Humanoid") and v.Name ~= v:FindFirstChild("Humanoid").DisplayName then
-                        v.Name = v:FindFirstChild("Humanoid").DisplayName
+if not _G.BetaKaitun then 
+    task.spawn(function()
+        while task.wait() do 
+            pcall(function()
+                for _, v in pairs(game.Workspace.Enemies:GetChildren()) do
+                    if v:IsA("Model") then  
+                        if v:FindFirstChild("Humanoid") and v.Name ~= v:FindFirstChild("Humanoid").DisplayName then
+                            v.Name = v:FindFirstChild("Humanoid").DisplayName
+                        end
                     end
                 end
-            end
-            for _, v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
-                if v:IsA("Model") then  
-                    if v:FindFirstChild("Humanoid") and v.Name ~= v:FindFirstChild("Humanoid").DisplayName then
-                        v.Name = v:FindFirstChild("Humanoid").DisplayName
+                for _, v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
+                    if v:IsA("Model") then  
+                        if v:FindFirstChild("Humanoid") and v.Name ~= v:FindFirstChild("Humanoid").DisplayName then
+                            v.Name = v:FindFirstChild("Humanoid").DisplayName
+                        end
                     end
                 end
-            end
-        end)
-    end
-end)
+            end)
+        end
+    end)
+
+end
 
 local questdata = {}
 
