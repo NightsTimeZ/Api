@@ -7,7 +7,7 @@ elseif placeId == 7449423635 then
     ThreeWorld = true
 end
 
-if not _G.BetaKaitun then 
+if true then 
     task.spawn(function()
         while task.wait() do 
             pcall(function()
