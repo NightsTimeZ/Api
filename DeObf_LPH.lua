@@ -1853,7 +1853,7 @@ questdata.CheckOldQuest = (function(LevelFarm)
             NameQuest = "PrisonerQuest"
 
             LevelQuest = 1
-            NameCheckQuest = "8 Prisoner"
+            NameCheckQuest = "8 Prisoners"
 
             CFrameMyMon = CFrame.new(5411, 96, 690)
             VectorMon = Vector3.new(5411, 96, 690)
