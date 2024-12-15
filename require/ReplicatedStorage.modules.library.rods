@@ -451,7 +451,6 @@ return {
 		["Price"] = math.huge,
 		["Strength"] = 75000,
 		["LureSpeed"] = 50,
-		["SplashSound"] = game.ReplicatedStorage.resources.sounds.sfx.fishing.customSplashes.Eternal King Splash,
 		["Passive"] = "RoyalEscort",
 		["Luck"] = 160,
 		["Control"] = 0.175,
