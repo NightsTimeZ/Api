@@ -1,0 +1,164 @@
+return {
+  ["Items"] = {
+    ["Windset Totem"] = {
+      ["Rarity"] = "Rare",
+      ["Price"] = 2000
+    },
+    ["Conception Conch"] = {
+      ["Rarity"] = "Mythical",
+      ["Price"] = 444
+    },
+    ["Glider"] = {
+      ["Price"] = 900,
+      ["OnlyBuyOne"] = true,
+      ["Rarity"] = "Rare"
+    },
+    ["Magic Thread"] = {
+      ["Price"] = inf,
+      ["Rarity"] = "Exotic",
+      ["SellValue"] = 250
+    },
+    ["Tempest Totem"] = {
+      ["Rarity"] = "Rare",
+      ["Price"] = 2000
+    },
+    ["Super Flippers"] = {
+      ["Price"] = 30000,
+      ["OnlyBuyOne"] = true,
+      ["Rarity"] = "Legendary"
+    },
+    ["Advanced Diving Gear"] = {
+      ["Price"] = 15000,
+      ["OnlyBuyOne"] = true,
+      ["Rarity"] = "Unusual"
+    },
+    ["Skin Crate"] = {
+      ["Rarity"] = "Exotic",
+      ["Price"] = inf
+    },
+    ["Bag of Presents"] = {
+      ["Rarity"] = "Exotic",
+      ["Price"] = inf
+    },
+    ["Crab Cage"] = {
+      ["Rarity"] = "Unusual",
+      ["Price"] = 45
+    },
+    ["Elite Token"] = {
+      ["Rarity"] = "Exotic",
+      ["Price"] = inf
+    },
+    ["Tidebreaker"] = {
+      ["Price"] = 80000,
+      ["OnlyBuyOne"] = true,
+      ["Rarity"] = "Mythical"
+    },
+    ["Flippers"] = {
+      ["Price"] = 9000,
+      ["OnlyBuyOne"] = true,
+      ["Rarity"] = "Unusual"
+    },
+    ["Handwritten Note"] = {
+      ["Rarity"] = "Exotic",
+      ["Price"] = inf
+    },
+    ["Treasure Map"] = {
+      ["Rarity"] = "Exotic",
+      ["Price"] = inf
+    },
+    ["Lunar Thread"] = {
+      ["Price"] = inf,
+      ["Rarity"] = "Exotic",
+      ["SellValue"] = 1250
+    },
+    ["Aurora Totem"] = {
+      ["Rarity"] = "Mythical",
+      ["Price"] = 500000
+    },
+    ["Basic Diving Gear"] = {
+      ["Price"] = 3000,
+      ["OnlyBuyOne"] = true,
+      ["Rarity"] = "Uncommon"
+    },
+    ["Fillionaire"] = {
+      ["Rarity"] = "Exotic",
+      ["Price"] = inf
+    },
+    ["Nuke"] = {
+      ["Rarity"] = "Exotic",
+      ["Price"] = inf
+    },
+    ["GPS"] = {
+      ["Price"] = 100,
+      ["OnlyBuyOne"] = true,
+      ["Rarity"] = "Uncommon",
+      ["Icon"] = "rbxassetid://92660360174055"
+    },
+    ["Meteor Totem"] = {
+      ["Rarity"] = "Legendary",
+      ["Price"] = 75000
+    },
+    ["Ancient Thread"] = {
+      ["Price"] = inf,
+      ["Rarity"] = "Exotic",
+      ["SellValue"] = 700
+    },
+    ["Sundial Totem"] = {
+      ["Rarity"] = "Rare",
+      ["Price"] = 2000
+    },
+    ["Witches Ingredient"] = {
+      ["Rarity"] = "Rare",
+      ["Price"] = 10000
+    },
+    ["Regular Token"] = {
+      ["Rarity"] = "Exotic",
+      ["Price"] = inf
+    },
+    ["Firework"] = {
+      ["Rarity"] = "Limited",
+      ["Price"] = 130
+    },
+    ["Eclipse Totem"] = {
+      ["Rarity"] = "Mythical",
+      ["Price"] = 250000
+    },
+    ["Smokescreen Totem"] = {
+      ["Rarity"] = "Rare",
+      ["Price"] = 2000
+    },
+    ["Fish Radar"] = {
+      ["Price"] = 8000,
+      ["OnlyBuyOne"] = true,
+      ["Rarity"] = "Legendary",
+      ["Icon"] = "rbxassetid://132119413174655"
+    }
+  },
+  ["Rarities"] = {
+    [1] = "Trash",
+    [2] = "Common",
+    [3] = "Uncommon",
+    [4] = "Unusual",
+    [5] = "Rare",
+    [6] = "Legendary",
+    [7] = "Mythical",
+    [8] = "Exotic",
+    [9] = "Limited",
+    [10] = "Developer"
+  },
+  ["ToInteger"] = function() end --[[ ToInteger ]],
+  ["RarityColours"] = {
+    ["Unusual"] = Color3.fromRGB(192, 135, 198),
+    ["Trash"] = Color3.fromRGB(145, 145, 145),
+    ["Common"] = Color3.fromRGB(142, 187, 191),
+    ["Exotic"] = Color3.fromRGB(255, 255, 255),
+    ["Uncommon"] = Color3.fromRGB(161, 255, 169),
+    ["Rare"] = Color3.fromRGB(119, 108, 181),
+    ["Legendary"] = Color3.fromRGB(240, 181, 109),
+    ["Extinct"] = Color3.fromRGB(54, 73, 159),
+    ["Relic"] = Color3.fromRGB(120, 255, 183),
+    ["Limited"] = Color3.fromRGB(255, 130, 57),
+    ["Mythical"] = Color3.fromRGB(255, 62, 120)
+  },
+  ["ToHex"] = function() end --[[ ToHex ]]
+}
