@@ -1717,7 +1717,7 @@ questdata.CheckQuest = (function()
 			NameQuest = "TikiQuest3"
 
 			LevelQuest = 2
-			NameCheckQuest = "xx"
+			NameCheckQuest = "Skull Slayers"
 
 			CFrameMyMon = CFrame.new(-16946, 76, 1639)
 			CFrameQuest = CFrame.new(-16665.19140625, 104.59640502929688, 1579.6943359375)
@@ -2736,7 +2736,7 @@ questdata.CheckOldQuest = (function(LevelFarm)
 			NameQuest = "TikiQuest3"
 
 			LevelQuest = 2
-			NameCheckQuest = "xx"
+			NameCheckQuest = "Skull Slayers"
 
 			CFrameMyMon = CFrame.new(-16946, 76, 1639)
 			CFrameQuest = CFrame.new(-16665.19140625, 104.59640502929688, 1579.6943359375)
