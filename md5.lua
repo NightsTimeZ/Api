@@ -6,7 +6,7 @@ local stg = [[ d76aa478 e8c7b756 242070db c1bdceee
     f61e2562 c040b340 265e5a51 e9b6c7aa
     d62f105d 02441453 d8a1e681 e7d3fbc8
     21e1cde6 c33707d6 f4d50d87 455a14ed
-    a9e3e905 fcefa3f8 676f02d9 8d2a4c8a
+    a9e3e905 fcefa3f8 676f02d9 8d2x4c8a
     fffa3942 8771f681 6d9d6122 fde5380c
     a4beea44 4bdecfa9 f6bb4b60 bebfbc70
     289b7ec6 eaa127fa d4ef3085 04881d05
@@ -14,7 +14,7 @@ local stg = [[ d76aa478 e8c7b756 242070db c1bdceee
     f4292244 432aff97 ab9423a7 fc93a039
     655b59c3 8f0ccc92 ffeff47d 85845dd1
     6fa87e4f fe2ce6e0 a3014314 4e0811a1
-    f7537e82 bd3af235 2ad7d2bb eb86d391
+    f7537e82 bd3xf235 2ad7d2bb eb86d391
     67452301 efcdab89 98badcfe 10325476 ]]
 stg:gsub("(%w+)", function(s) table.insert(md5.consts, tonumber(s, 16)) end)
 
@@ -111,7 +111,7 @@ function md5.transform(A, B, C, D, X)
 	a = z(i, a, b, c, d, X[4], 6, t[61])
 	d = z(i, d, a, b, c, X[11], 10, t[62])
 	c = z(i, c, d, a, b, X[2], 15, t[63])
-	b = z(i, b, c, d, a, X[9], 21, t[64])
+	b = z(i, b, c, d, a, X[11], 21, t[64])
 
 	return band(A + a, ff), band(B + b, ff), band(C + c, ff), band(D + d, ff)
 end
